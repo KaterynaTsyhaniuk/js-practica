@@ -141,7 +141,7 @@ console.log(checkForSpam('Trust me, this is not a spam message')); // true
 console.log(checkForSpam('Get rid of sPaM emails. Our book in on sale!')); // true
 console.log(checkForSpam('[SPAM] How to earn fast money?')); // true*/
 
-function getShippingCost(country) {
+/*function getShippingCost(country) {
   let price;
   switch (country) {
     case 'China':
@@ -167,3 +167,51 @@ console.log(getShippingCost('China')); // "Shipping to China will cost 100 credi
 console.log(getShippingCost('Chile')); // "Shipping to Chile will cost 250 credits"
 console.log(getShippingCost('Jamaica')); // "Shipping to Jamaica will cost 120 credits"
 console.log(getShippingCost('Sweden')); // "Sorry, there is no delivery to your country"
+
+function getLength(array) {
+  let str = array.join(''); //обєднуємо масив у рядок без роздільників
+  return str.length; //повернути к-ть символів у рядку
+}
+
+console.log(getLength(['Mango', 'hurries', 'to', 'the', 'train'])); //повертає 22
+console.log(getLength(['M', 'a', 'n', 'g', 'o'])); //повертає 5
+console.log(getLength(['top', 'picks', 'for', 'you'])); // повертає 14
+
+function calculateEngravingPrice(message, pricePerWord) {
+  let str = message.split(' '); //розділили слова в рядку (" ") лапки з пробілом
+  console.log(str);
+  return str.length * pricePerWord; // перемножили к-ть слів у рядку на ціну)
+}
+
+console.log(calculateEngravingPrice('JavaScript is in my blood', 10)); //повертає 50
+console.log(calculateEngravingPrice('JavaScript is in my blood', 20)); //повертає 100
+console.log(calculateEngravingPrice('Web-development is creative work', 40)); //повертає 160
+console.log(calculateEngravingPrice('Web-development is creative work', 20)); //повертає 80
+
+function getSlice(array, value) {
+  let index = array.indexOf(value); //шукаємо індекс елемента зі знач value  у масиві
+  if (index === -1) {               //якщо елемент незнайдено повертаємо порожній масив
+    return [];
+  }
+  return array.slice(0, index + 1);     // повертаємо підмасив від поч масиву до елемента зі знач value включно
+}
+
+console.log(getSlice(['Mango', 'Poly', 'Ajax'], 'Poly')); //повертає ["Mango", "Poly"]
+console.log(getSlice(['Mango', 'Poly', 'Ajax'], 'Ajax')); //повертає ["Mango", "Poly", "Ajax"]
+console.log(getSlice(['Mango', 'Poly', 'Ajax'], 'Mango')); // повертає ["Mango"]
+console.log(getSlice(['Mango', 'Poly', 'Ajax'], 'Jacob')); // повертає []
+console.log(getSlice(['Mango', 'Poly', 'Ajax'], 'Casey')); // повертає []*/
+
+function createArrayOfNumbers(min, max) {
+  let result = []; //створюємо порожній масив
+  for (let i = min; i <= max; i++) {
+    //за допомогою методу push на кожній ітерації ми додаємо поточне число до масиву
+    result.push(i);
+  }
+  return result; //після завершення циклу ми повертаємо отриманий масив
+}
+
+console.log(createArrayOfNumbers(1, 3)); //повертає [1, 2, 3]
+console.log(createArrayOfNumbers(14, 17)); //повертає [14, 15, 16, 17]
+console.log(createArrayOfNumbers(29, 34)); // повертає [29, 30, 31, 32, 33, 34]
+console.log(createArrayOfNumbers()); //з випадковими min і max повертає правильний масив
